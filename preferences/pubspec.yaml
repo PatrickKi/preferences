@@ -1,6 +1,6 @@
 name: preferences
 description: Helper package for saving preferences.
-version: 1.0.0
+version: 1.0.1
 
 publish_to: none
 
