@@ -2,6 +2,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class BoolPref extends Pref<bool> {
   BoolPref(String key, [bool? defaultValue]) : super(key, _setValue, defaultValue);
+  BoolPref.defaultFalse(String key) : super(key, _setValue, false);
+  BoolPref.defaultTrue(String key) : super(key, _setValue, true);
   static Future<bool> _setValue(SharedPreferences sharedPreferences, String key, bool value) {
     return sharedPreferences.setBool(key, value);
   }
