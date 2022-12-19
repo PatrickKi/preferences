@@ -55,8 +55,9 @@ abstract class Pref<T extends Object?> {
     return value as T?;
   }
 
-  Future<String?> getFormatted(String? Function(T? value) formatter) async {
+  Future<String?> getFormatted(String? Function(T? value)? formatter) async {
     final result = await get();
+    if (formatter == null) return result.toString();
     return formatter.call(result);
   }
 
